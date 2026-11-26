@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<title>Redirecting…</title>
-</head>
-<body>
-<p id="m">Redirecting…</p>
-<script id="maria-links" type="application/json">{"beef-and-potato-bake":"https://lunameals.com/beef-and-potato-bake/","budget-ground-beef-and-cabbage-casserole":"https://lunameals.com/budget-ground-beef-and-cabbage-casserole/","cajun-cream-cheese-alfredo-bowties-with-spiced-ground-beef":"https://lunameals.com/cajun-cream-cheese-alfredo-bowties-with-spiced-ground-beef/","cheesy-beef-and-potato-soup":"https://lunameals.com/cheesy-beef-and-potato-soup/","cheesy-beef-and-sweet-corn-rotini-bake":"https://lunameals.com/cheesy-beef-and-sweet-corn-rotini-bake/","cheesy-bowtie-pasta-with-savory-cajun-ground-beef-in-garlic-cream":"https://lunameals.com/cheesy-bowtie-pasta-with-savory-cajun-ground-beef-in-garlic-cream/","cheesy-cheeseburger-tater-tot-casserole":"https://lunameals.com/cheesy-cheeseburger-tater-tot-casserole/","cheesy-garlic-twisted-pasta-with-cajun-ground-beef-and-alfredo-velveeta":"https://lunameals.com/cheesy-garlic-twisted-pasta-with-cajun-ground-beef-and-alfredo-velveeta/","cheesy-ground-beef-tater-tot-casserole":"https://lunameals.com/cheesy-ground-beef-tater-tot-casserole/","cheesy-ground-beef-and-potato-casserole":"https://lunameals.com/cheesy-ground-beef-and-potato-casserole/"}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lunameals.com</title>
+<style>html,body{margin:0;background:#fff}</style>
+<script id="maria-links" type="application/json">{"beef-and-potato-bake":"https://lunameals.com/beef-and-potato-bake/","budget-ground-beef-and-cabbage-casserole":"https://lunameals.com/budget-ground-beef-and-cabbage-casserole/","cajun-cream-cheese-alfredo-bowties-with-spiced-ground-beef":"https://lunameals.com/cajun-cream-cheese-alfredo-bowties-with-spiced-ground-beef/","cheesy-beef-and-potato-soup":"https://lunameals.com/cheesy-beef-and-potato-soup/","cheesy-beef-and-sweet-corn-rotini-bake":"https://lunameals.com/cheesy-beef-and-sweet-corn-rotini-bake/","cheesy-bowtie-pasta-with-savory-cajun-ground-beef-in-garlic-cream":"https://lunameals.com/cheesy-bowtie-pasta-with-savory-cajun-ground-beef-in-garlic-cream/","cheesy-cheeseburger-tater-tot-casserole":"https://lunameals.com/cheesy-cheeseburger-tater-tot-casserole/","cheesy-garlic-twisted-pasta-with-cajun-ground-beef-and-alfredo-velveeta":"https://lunameals.com/cheesy-garlic-twisted-pasta-with-cajun-ground-beef-and-alfredo-velveeta/","cheesy-ground-beef-tater-tot-casserole":"https://lunameals.com/cheesy-ground-beef-tater-tot-casserole/","cheesy-ground-beef-and-potato-casserole":"https://lunameals.com/cheesy-ground-beef-and-potato-casserole/","perfect-ground-beef-and-rice-skillet":"https://lunameals.com/perfect-ground-beef-and-rice-skillet/","philly-cheesesteak-sloppy-joes":"https://lunameals.com/philly-cheesesteak-sloppy-joes/","quick-easy-korean-ground-beef-bowl":"https://lunameals.com/quick-easy-korean-ground-beef-bowl/","salisbury-steak-meatballs":"https://lunameals.com/salisbury-steak-meatballs/","seasoned-ground-beef-taco-pasta-salad-bowl":"https://lunameals.com/seasoned-ground-beef-taco-pasta-salad-bowl/"}</script>
 <script>
 (function () {
   var links = JSON.parse(document.getElementById("maria-links").textContent);
@@ -16,7 +15,7 @@
   try { slug = decodeURIComponent(parts.shift() || ""); } catch (e) {}
   slug = slug.toLowerCase().replace(/\/+$/, "");
   var to = links[slug];
-  if (!to) { document.title = "Page not found"; document.getElementById("m").textContent = "Page not found."; return; }
+  if (!to) { document.title = "Page not found"; document.addEventListener("DOMContentLoaded", function () { document.body.textContent = "Page not found."; }); return; }
   var extra = parts.filter(Boolean).join("&");
   if (extra) {
     var h = to.indexOf("#"), hash = h < 0 ? "" : to.slice(h), u = h < 0 ? to : to.slice(0, h);
@@ -25,5 +24,7 @@
   location.replace(to);
 })();
 </script>
+</head>
+<body>
 </body>
 </html>
